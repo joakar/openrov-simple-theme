@@ -1,12 +1,12 @@
 This is the simpletheme plugin for OpenROV Cockpit.
 
 A new fresh theme for https://github.com/OpenROV/openrov-software<br>
-Tested with Release 2.5.1 (RC5)
+
 ###install
 
-* Drop openrov-simple-theme folder in ```/opt/openrov/cockpit/src/plugins```
+* Drop openrov-simple-theme folder in ```/opt/openrov/cockpit/src/ui-plugins```
 * Restart OpenROV ```/etc/init.d/openrov restart```
-* You can enable/disable the theme in ```settings > Plugins to enable/disable > Simple Theme```
+* You can choose the theme in ```settings > UI Configuration > Simple Theme``` 
 * Enjoy!
 
 
