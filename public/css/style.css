@@ -47,7 +47,7 @@ rov-ui-simple-theme /deep/ #rov_status_panel{
   height: auto!important;
   width: 370px;
   overflow: hidden!important;
-  opacity: 0;
+  opacity: 0; 
   -webkit-transition: opacity 400ms ease-out;
   -moz-transition: opacity 400ms ease-out;
   -ms-transition: opacity 400ms ease-out;
@@ -69,19 +69,11 @@ rov-ui-simple-theme /deep/ #telemetry{
   position: absolute;
   top: 40px;
   bottom: 0px;
-  overflow-y:scroll;
-  overflow-x:hidden;
   height: auto;
-  display: none;
+  overflow-x: visible;
+  overflow-y: visible;
 }
-rov-ui-simple-theme /deep/ #telemetry ul{
-  list-style: none;
-  margin:0;
-}
-rov-ui-simple-theme /deep/ #telemetry ul li > li{
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
+
 rov-ui-simple-theme /deep/ #outter-videocontainer{
   width: 100%;
 }
@@ -582,27 +574,28 @@ rov-ui-simple-theme /deep/ .ui-slider-horizontal .ui-slider-handle{
   top:-6px!important;
   margin-left: -6px!important;
 }
-#telemetry-graph{
-  display: none;
-}
-rov-ui-simple-theme /deep/ #telemetry-graph{
+rov-ui-simple-theme /deep/ #telemetrygraph{
+  /* display: none; */
+ }
+rov-ui-simple-theme /deep/ #telemetrygraph{
   position: absolute;
-  top: 40px;
+  top: 10px;
   bottom: 0px;
   overflow-y:scroll;
   overflow-x:hidden;
   height: auto;
   display: block;
+  width: 360px;
 }
 
 
-rov-ui-simple-theme /deep/ #telemetry-graph > div{
+rov-ui-simple-theme /deep/ #telemetrygraph > div{
   display: inline-block;
   margin:5px;
   position: relative;
 
 }
-rov-ui-simple-theme /deep/ #telemetry-graph h1{
+rov-ui-simple-theme /deep/ #telemetrygraph h1{
   font-weight: 100;
   font-size: 10px;
   margin: 0px;
@@ -610,12 +603,12 @@ rov-ui-simple-theme /deep/ #telemetry-graph h1{
   line-height: 10px;
   font-style: italic;
 }
-rov-ui-simple-theme /deep/ #telemetry-graph .line {
+rov-ui-simple-theme /deep/ #telemetrygraph .line {
     fill: none;
     stroke: rgb(255, 176, 31);;
     stroke-width:1px;
 }
-rov-ui-simple-theme /deep/ #telemetry-graph .status {
+rov-ui-simple-theme /deep/ #telemetrygraph .status {
     position: absolute;
     left:0;
     top:0;

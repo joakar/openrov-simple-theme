@@ -1,18 +1,11 @@
 <link rel="import" href="../../../bower_components/polymer/polymer.html">
 <polymer-element name="telemetry-monitor" attributes="maxLines">
   <template>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../themes/OpenROV/css/style.css">
-    <style>
-      .well {
-        background-color: black;
-        color: white;
-      }
-    </style>
-
-    <div class="controller well well-small">
-      <div id="telemetry-graph"></div>
-    </div>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../themes/OpenROV/css/style.css">
+   
+    <div id="telemetrygraph"></div>
+   
 
 
   </template>
@@ -48,7 +41,7 @@
           }
          
 
-         
+          self.logStatusData({'hdgd':45});
          
 
         },
@@ -103,11 +96,10 @@
          var validArr = rov.validTelemetry.split(" ");
     
           for(var x in validArr){
-            new rov.line(validArr[x]);
+            new rov.line(rov,validArr[x]);
           }
         },
-        line:function(header){
-          var rov = this;
+        line: function(rov,header){
           var t = -1;
           var n = 100;
           var v = 0;
@@ -123,7 +115,7 @@
            
           var width = n,
               height = 40;
-         
+          
           var x = d3.scale.linear()
               .domain([0, n - 1])
               .range([0, width]);
@@ -135,7 +127,8 @@
           var line = d3.svg.line()
               .x(function(d, i) { return x(d.time); })
               .y(function(d, i) { return y(d.value); });
-          var main = d3.select("#telemetry-graph").append("div");
+
+          var main = d3.select(rov.$.telemetrygraph).append("div");
 
           var title = main
             .append('h1')
@@ -172,7 +165,6 @@
                     .ease("linear")
                     .attr("transform", "translate(-" + (width/n) + ")")
                     .each("end", tick);
-                    console.log(header,rov.telemetryRAW,rov.telemetryRAW[header]);
                 status.html(rov.telemetryRAW[header]);
                 if(data.length > n){
                   data.shift();  
