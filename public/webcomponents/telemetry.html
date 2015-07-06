@@ -1,0 +1,190 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<polymer-element name="telemetry-monitor" attributes="maxLines">
+  <template>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../themes/OpenROV/css/style.css">
+    <style>
+      .well {
+        background-color: black;
+        color: white;
+      }
+    </style>
+
+    <div class="controller well well-small">
+      <div id="telemetry-graph"></div>
+    </div>
+
+
+  </template>
+  <script>
+    (function() {
+
+      Polymer({
+        telemetry: {},
+        validTelemetry: "hdgd deap pitc roll yaw fthr servo starg fmem vout iout atmp cpuusage pres temp alps brdt sc1i sc2i sc3i brdi bt1i bt2i brdv avcc mtarg capa",
+        telemetry: [],
+        telemetryRAW: [],
+        isInit: true,
+        importantTelemetry: {},
+        textcolor: 0,
+        ready: function () {
+          var self = this;
+          window.cockpit.rov.on('plugin.telemetry.cycleTextColor', function () {
+            self.cycleTextColor();
+          });
+          window.cockpit.rov.on('plugin.telemetry.logData', function (data) {
+            self.logStatusData(data);
+          });
+        },
+        domReady: function () {
+          var self = this;
+          this.list = $(this.$.TelemetryList);
+          self.telemetryList = this.list.length > 0 ? this.list[0] : undefined;
+
+          if (self.telemetryList) {
+            self.telemetryList.addEventListener('click', function (e) {
+              self.handleDescendantEvent(e);
+            }, true);
+          }
+         
+
+         
+         
+
+        },
+        logStatusData: function (data) {
+          var rov = this;
+          for (var i in data) {
+            var li = i.toLowerCase();
+            if(rov.validTelemetry.indexOf(li) != -1){
+              rov.telemetry[li] = parseFloat(data[i]);
+              rov.telemetryRAW[li] = (li == 'cpuusage'?parseFloat(data[i]).toFixed(2):data[i]);        
+            }
+          }
+        
+          if(rov.isInit){
+            var runInit = false;
+            for (var x in rov.telemetry) {
+              if(rov.telemetry[x] != undefined){
+                runInit = true;
+                break;
+              }
+            }
+
+            if(runInit){
+              rov.displayTelemetry();
+              rov.isInit = false;
+            }
+          }
+        },
+      cycleTextColor: function() {
+          var self = this;
+
+          self.textcolor += 5;
+          if (self.textcolor > 255) {
+            self.textcolor = 0;
+          }
+          if (self.telemetryList) {
+            self.telemetryList.style.color = 'rgb(' + self.textcolor + ',' + self.textcolor + ',255)';
+          }
+        },
+        handleDescendantEvent: function(e) {
+          if (e.type == 'click' && e.eventPhase == Event.CAPTURING_PHASE) {
+            var telemetry_name = e.target.innerText.split(' ')[0];
+            if (this.importantTelemetry[telemetry_name] === true) {
+              this.importantTelemetry[telemetry_name] = false;
+            } else {
+              this.importantTelemetry[telemetry_name] = true;
+            }
+          }
+        },
+        displayTelemetry: function () {
+          var rov = this;
+         var validArr = rov.validTelemetry.split(" ");
+    
+          for(var x in validArr){
+            new rov.line(validArr[x]);
+          }
+        },
+        line:function(header){
+          var rov = this;
+          var t = -1;
+          var n = 100;
+          var v = 0;
+          var data = [];
+
+          function next () {
+            var dataNow = rov.telemetry[header];
+              return {
+                  time: ++t,
+                  value: v = (dataNow?dataNow:0)
+              };
+          }
+           
+          var width = n,
+              height = 40;
+         
+          var x = d3.scale.linear()
+              .domain([0, n - 1])
+              .range([0, width]);
+         
+          var y = d3.scale.linear()
+              .domain([0, 20])
+              .range([height, 0]);
+         
+          var line = d3.svg.line()
+              .x(function(d, i) { return x(d.time); })
+              .y(function(d, i) { return y(d.value); });
+          var main = d3.select("#telemetry-graph").append("div");
+
+          var title = main
+            .append('h1')
+            .html(header);
+          var status = main
+            .append('span')
+            .attr("class", 'status')
+            .html(rov.telemetryRAW[header]);
+          
+          var svg = main.append("svg")
+              .attr("width", width)
+              .attr("height", height).attr("class", header);
+          
+          var path = svg.append("path")
+            .data([data])
+            .attr("class", "line")
+            .attr("d", line);
+            
+            tick();
+             
+            function tick(){ 
+                data.push(next());
+                var maxList = [];
+                data.forEach(function(d){maxList[maxList.length] = d.value});
+            
+                x.domain([t - n, t]);
+                y.domain([d3.min(maxList),  d3.max(maxList)]);
+          
+                path
+                    .attr("d", line)
+                    .attr("transform", null)
+                    .transition()
+                    .duration(1000)
+                    .ease("linear")
+                    .attr("transform", "translate(-" + (width/n) + ")")
+                    .each("end", tick);
+                    console.log(header,rov.telemetryRAW,rov.telemetryRAW[header]);
+                status.html(rov.telemetryRAW[header]);
+                if(data.length > n){
+                  data.shift();  
+                }
+                
+            } 
+        }
+      });
+    })();
+  </script>
+
+</polymer-element>
+  
+
+

@@ -1,38 +1,45 @@
-.simpleTheme *,.simpleTheme *:before,.simpleTheme *:after,*:focus{
+
+
+rov-ui-simple-theme /deep/ *,html /deep/ rov-ui-simple-theme /deep/ *:before,html /deep/ rov-ui-simple-theme /deep/ *:after,*:focus{
    outline: 0;
+   box-sizing: border-box;
+   -webkit-box-sizing: border-box;
 }
-.simpleTheme body{
+rov-ui-simple-theme /deep/ body{
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
 }
-.simpleTheme h2{
+rov-ui-simple-theme /deep/ h2{
   font-size:20px;
+  font-weight: 400!important;
+
 }
-.simpleTheme h4{
+rov-ui-simple-theme /deep/ h4{
   font-size: 12px;
   font-weight: 100!important;
 }
-.simpleTheme h6{
+rov-ui-simple-theme /deep/ h6{
   font-weight: 100!important;
 }
-.simpleTheme h1,.simpleTheme  h2,.simpleTheme  h3,.simpleTheme  h4,.simpleTheme  h5,.simpleTheme  h6{
+rov-ui-simple-theme /deep/ h1,rov-ui-simple-theme /deep/  h2,rov-ui-simple-theme /deep/  h3,rov-ui-simple-theme /deep/  h4,rov-ui-simple-theme /deep/  h5,rov-ui-simple-theme /deep/  h6{
   margin:0px;
   color:#fff;
 }
-.simpleTheme .navbar-fixed-top{
-  position: absolute;
+rov-ui-simple-theme /deep/ .navbar-fixed-top{
+  position: fixed;
 }
-.simpleTheme #footer{
-  position: absolute;
+rov-ui-simple-theme /deep/ #footer{
+  position: fixed;
   height: 70px!important;
+  bottom: 0px!important;
 }
-.simpleTheme #main-row{
+rov-ui-simple-theme /deep/ #main-row{
   height: 100%;
 }
-.simpleTheme .navbar-inverse .navbar-inner{
+rov-ui-simple-theme /deep/ .navbar-inverse .navbar-inner{
   background:none; 
 }
-.simpleTheme #rov_status_panel{
+rov-ui-simple-theme /deep/ #rov_status_panel{
   position: absolute;
   right: 0;
   top: 50px;
@@ -48,17 +55,17 @@
   transition: opacity 400ms ease-out;
  /* display: none!important;*/
 }
-.simpleTheme #rov_status_panel:hover{
+rov-ui-simple-theme /deep/ #rov_status_panel:hover{
   opacity: 1;
 }
-.simpleTheme #rov_status_panel .well{
+rov-ui-simple-theme /deep/ #rov_status_panel .well{
   background:none;
   border:none;
   box-shadow: none;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
 }
-.simpleTheme #telemetry{
+rov-ui-simple-theme /deep/ #telemetry{
   position: absolute;
   top: 40px;
   bottom: 0px;
@@ -67,61 +74,65 @@
   height: auto;
   display: none;
 }
-.simpleTheme #telemetry ul{
+rov-ui-simple-theme /deep/ #telemetry ul{
   list-style: none;
   margin:0;
 }
-.simpleTheme #telemetry ul li > li{
+rov-ui-simple-theme /deep/ #telemetry ul li > li{
   white-space: pre-wrap;
   word-wrap: break-word;
 }
-.simpleTheme #outter-videocontainer{
+rov-ui-simple-theme /deep/ #outter-videocontainer{
   width: 100%;
 }
-.simpleTheme .navbar-fixed-top .navbar-inner,.simpleTheme .navbar-static-top .navbar-inner,.simpleTheme .navbar-fixed-bottom .navbar-inner{
+rov-ui-simple-theme /deep/ .navbar-fixed-top .navbar-inner,rov-ui-simple-theme /deep/ .navbar-static-top .navbar-inner,rov-ui-simple-theme /deep/ .navbar-fixed-bottom .navbar-inner{
   box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
 }
 
-.simpleTheme #compass{
+rov-ui-simple-theme /deep/ #compass{
   display: none;
 }
-.simpleTheme .navbar-inverse .brand,.simpleTheme .navbar-inverse .nav>li>a {
+rov-ui-simple-theme /deep/ .navbar-inverse .brand,rov-ui-simple-theme /deep/ .navbar-inverse .nav>li>a {
   color: #fff!important;
   text-shadow: none!important;
   font-weight: 100;
   padding: 10px 20px;
 }
-.simpleTheme #navtoolbar li > a {
+rov-ui-simple-theme /deep/ ul.nav>li>*{
+  margin-left:0;
+  margin-right:0; 
+}
+rov-ui-simple-theme /deep/ #navtoolbar li > a {
   padding: 10px;
 }
-.simpleTheme #rovPilot_holdLabel{
+rov-ui-simple-theme /deep/ #rovPilot_holdLabel{
   display: none;
 }
-.simpleTheme #rovPilot_navtoolbar{
+rov-ui-simple-theme /deep/ #rovPilot_navtoolbar{
  margin-left: 10px; 
 }
-.simpleTheme #gamepadPopover{
+rov-ui-simple-theme /deep/ #gamepadPopover{
   display: none;
 }
-.simpleTheme #rovPilot_laserIcon{
+rov-ui-simple-theme /deep/ #laserIcon{
   display: none!important;
 }
-.simpleTheme #rovPilot_laser:after{
+rov-ui-simple-theme /deep/ #laser:after{
   content: "L"
 }
-.simpleTheme #gamepad:after{
+rov-ui-simple-theme /deep/ #gamepad:after{
   content:'G';
 }
-.simpleTheme #rovPilot_depthHold:after{
+rov-ui-simple-theme /deep/ #depthHold:after{
   content:'D';
 }
-.simpleTheme #rovPilot_headingHold:after{
+rov-ui-simple-theme /deep/ #headingHold:after{
   content:'H';
 }
-.simpleTheme .rovPilot_Indicator,.simpleTheme #gamepad{
-  line-height: 24px!important;
+rov-ui-simple-theme /deep/ .indicator,rov-ui-simple-theme /deep/ #gamepad{
+  line-height: 23px!important;
   top: 13px!important;
   height: 23px!important;
   font-size: 0px;
@@ -130,45 +141,47 @@
   width: 23px!important;
   border-radius: 23px!important;
   text-align: center;
-  margin:0 2px!important;
-  background: rgba(40, 40, 40, 0.6)!important;
+  margin:1px 3px!important;
+  background: rgba(0, 0, 0, 0.4)!important;
   border:1px solid transparent!important;
   text-indent: 1px;
   letter-spacing: 0;
+  text-decoration: none!important;
   -webkit-transition: background-color .2s ease-out;
   -moz-transition: background-color .2s ease-out;
   -ms-transition: background-color .2s ease-out;
   -o-transition: background-color .2s ease-out;
   transition: background-color .2s ease-out;
+  color:#fff!important;
 }
-.simpleTheme .rovPilot_Indicator:after,.simpleTheme #gamepad:after{
+rov-ui-simple-theme /deep/ .indicator:after,rov-ui-simple-theme /deep/ #gamepad:after{
   font-size: 12px;
 }
-.simpleTheme #gamepad.hidden{
+rov-ui-simple-theme /deep/ #gamepad.hidden{
   visibility: visible;
+  display: block;
   opacity: 0.5;
 }
-.simpleTheme #rovPilot_laser.enabled{
+rov-ui-simple-theme /deep/ #laser.enabled{
   background: #cd0a0a!important;
-
 }
-.simpleTheme #rovPilot_depthHold.enabled{
+rov-ui-simple-theme /deep/ #depthHold.enabled{
   background: green!important;
 
 }
-.simpleTheme #rovPilot_headingHold.enabled{
+rov-ui-simple-theme /deep/ #headingHold.enabled{
   background: #005580!important;
 
 }
 
-.simpleTheme #batteryIndicator{
+rov-ui-simple-theme /deep/ #batteryIndicator{
   background: rgba(40, 40, 40, 0.6);
-  height: 15px;
+  height: 17px;
   padding: 2px;
   width: 50px;
   position: relative;
 }
-.simpleTheme #batteryIndicator:before{
+rov-ui-simple-theme /deep/ #batteryIndicator:before{
   content:'';
   display: inline-block;
   height: 100%;
@@ -182,7 +195,7 @@
   position: relative;
   vertical-align: top;
 }
-.simpleTheme #batteryIndicator:after{
+rov-ui-simple-theme /deep/ #batteryIndicator:after{
   content: '';
   position: absolute;
   height: 10px;
@@ -192,50 +205,55 @@
   margin-right: -3px;
   top: 4px;
 }
-.simpleTheme #batteryIndicator.level1:before{
+rov-ui-simple-theme /deep/ #batteryIndicator.level1:before{
     width:20%;
     background-color:#9DCA5A;
 }
 
-.simpleTheme #batteryIndicator.level2:before {
+rov-ui-simple-theme /deep/ #batteryIndicator.level2:before {
     width:40%;
     background-color:#9DCA5A;
 }
 
-.simpleTheme #batteryIndicator.level3:before {
+rov-ui-simple-theme /deep/ #batteryIndicator.level3:before {
     width:60%;
     background-color:#9DCA5A;
 }
 
-.simpleTheme #batteryIndicator.level4:before {
+rov-ui-simple-theme /deep/ #batteryIndicator.level4:before {
     width:80%;
     background-color:#9DCA5A;
 }
 
-.simpleTheme #batteryIndicator.level5:before {
+rov-ui-simple-theme /deep/ #batteryIndicator.level5:before {
     width:100%;
     background-color:#9DCA5A;
 }
-.simpleTheme .navbar-fixed-top .brand img {
+rov-ui-simple-theme /deep/ .navbar-fixed-top .brand {
+  height: 14.5px;
+  width: 154.5px;
+  margin-right: 15px;
+}
+rov-ui-simple-theme /deep/ .navbar-fixed-top .brand img {
     height: 14.5px;
-    width: 114.5px;
+    width: 154.5px;
     content:url(../img/openrov.png);
 }
-.simpleTheme .navbar-fixed-top .brand .navbar-titel{
+rov-ui-simple-theme /deep/ .navbar-fixed-top .brand .navbar-titel{
   display: none;
 }
-.simpleTheme .navbar-fixed-top .nav img{
+rov-ui-simple-theme /deep/ .navbar-fixed-top .nav img{
   width: 23px;
   height: 23px;
   margin-top: 4px;
 }
-.simpleTheme #keyboardpopover{
+rov-ui-simple-theme /deep/ #keyboardpopover{
   content:url(../img/keyboard.png);
 }
-.simpleTheme #servoTilt{
+rov-ui-simple-theme /deep/ #servoTilt{
   
 }
-.simpleTheme #servoTiltImage{
+rov-ui-simple-theme /deep/ #servoTiltImage{
   content:url(../img/servo_tilt.png);
   background: rgba(0,0,0,0.4);
   border-radius: 23px;
@@ -244,15 +262,19 @@
   -ms-transition: -ms-transform 400ms ease-in-out;
   -o-transition: -o-transform 400ms ease-in-out;
   transition: transform 400msease-in-out;
+  height: 23px;
+  width: 23px;
+  margin-top: 4px;
 }
-.simpleTheme #brightnessIndicator{
+rov-ui-simple-theme /deep/ #brightnessIndicator{
   border:none;
   background: rgba(0,0,0,0.4);
   border-radius: 23px;
   height: 23px;
   overflow: hidden;
+  margin-right: 10px;
 }
-.simpleTheme #brightnessIndicator:before{
+rov-ui-simple-theme /deep/ #brightnessIndicator:before{
   content:'';
   display: inline-block;
   height: 100%;
@@ -265,66 +287,66 @@
   transition: width .4s ease-in-out,background-color .4s ease-in-out;
   position: relative;
 }
-.simpleTheme #brightnessIndicator.level0:before {
+rov-ui-simple-theme /deep/ #brightnessIndicator.level0:before {
     width:0;
     background-color: rgba(0,0,0,0);
 }
-.simpleTheme #brightnessIndicator.level1:before {
+rov-ui-simple-theme /deep/ #brightnessIndicator.level1:before {
     width:10%;
     background-color: #FEFDEA;
 
 }
-.simpleTheme #brightnessIndicator.level2:before {
+rov-ui-simple-theme /deep/ #brightnessIndicator.level2:before {
     width:20%;
     background-color: #FEFCD6;
 }
-.simpleTheme #brightnessIndicator.level3:before {
+rov-ui-simple-theme /deep/ #brightnessIndicator.level3:before {
     width:30%;
     background-color:#FEFBC0 ;
 }
-.simpleTheme #brightnessIndicator.level4:before{
+rov-ui-simple-theme /deep/ #brightnessIndicator.level4:before{
     background-color:#FEFBAB ;
     width:40%;
 }
-.simpleTheme #brightnessIndicator.level5:before {
+rov-ui-simple-theme /deep/ #brightnessIndicator.level5:before {
     background-color:#FEFA97 ;
     width:50%;
 }
-.simpleTheme #brightnessIndicator.level6:before {
+rov-ui-simple-theme /deep/ #brightnessIndicator.level6:before {
     background-color:#FEF980 ;
     width:60%;
 }
 
-.simpleTheme #brightnessIndicator.level7:before {
+rov-ui-simple-theme /deep/ #brightnessIndicator.level7:before {
     background-color:#FDF96A ;
     width:70%;
 }
 
-.simpleTheme #brightnessIndicator.level8:before {
+rov-ui-simple-theme /deep/ #brightnessIndicator.level8:before {
     background-color:#FDF952 ;
     width:80%;
 }
 
-.simpleTheme #brightnessIndicator.level9:before {
+rov-ui-simple-theme /deep/ #brightnessIndicator.level9:before {
     background-color:#FDF83E ;
     width:90%;
 }
 
-.simpleTheme #brightnessIndicator.level10:before {
+rov-ui-simple-theme /deep/ #brightnessIndicator.level10:before {
     background-color:#FEF935 ;
     width:100%;
 }
-.simpleTheme .topdowncompass{
+rov-ui-simple-theme /deep/ .topdowncompass{
   width: 50px;
   height: 50px;
 }
-.simpleTheme .navbar-fixed-bottom h2{
+rov-ui-simple-theme /deep/ .navbar-fixed-bottom h2{
   text-shadow:none;
   color:#fff;
   font-weight: 200;
   text-transform: capitalize;
 }
-.simpleTheme #rovPilot_thrustFactor .badge{
+rov-ui-simple-theme /deep/ .label.badge{
   padding: 0px;
   -webkit-border-radius: 23px;
   -moz-border-radius: 23px;
@@ -335,8 +357,9 @@
   line-height: 23px;
   font-weight: 100;
   background: rgba(0,0,0,0.4);
+  font-size: 14px;
 }
-.simpleTheme #connectionHealth,.simpleTheme #blackboxstatus{
+rov-ui-simple-theme /deep/ #connectionHealth,rov-ui-simple-theme /deep/ #blackboxstatus{
   padding: 0px;
   -webkit-border-radius: 23px;
   -moz-border-radius: 23px;
@@ -349,23 +372,23 @@
   background:#cc6666!important;
   margin:0;
 }
-.simpleTheme #connectionHealth .connected,.simpleTheme #blackboxstatus.connected{
+rov-ui-simple-theme /deep/ #connectionHealth .connected,rov-ui-simple-theme /deep/ #blackboxstatus.connected{
   background-color:#6ACC66!important; 
 }
-.simpleTheme .topdowncompass{
+rov-ui-simple-theme /deep/ .topdowncompass{
   height: 40px!important;
   width: 40px!important;
   background-color: rgba(0,0,0,0.4);
   border-radius: 60px;
   padding:5px;
 }
-.simpleTheme .compassNeedle{
+rov-ui-simple-theme /deep/ .compassNeedle{
   background:url(../img/needle.png) 0 0 no-repeat!important;
   height: 40px!important;
   width: 40px!important;
   background-size: 40px 40px!important; 
 }
-.simpleTheme #fpsmeter2 > div{
+rov-ui-simple-theme /deep/ #fpsmeter > div{
   border:none!important;
   position: relative!important;
   top:20px!important;
@@ -381,57 +404,58 @@
   border-radius: 60px;
   padding:0px!important;
   overflow: hidden;
+  font-size: 12px;
 }
-.simpleTheme #fpsmeter2 > div > div{
+rov-ui-simple-theme /deep/ #fpsmeter > div > div{
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif!important;
   font-weight: 100!important;
   height: 23px!important;
   line-height: 20px!important;
 
 }
-.simpleTheme #fpsmeter2 > div > div:nth-child(1) {
-  font-size: 15px!important;
+rov-ui-simple-theme /deep/ #fpsmeter > div > div:nth-child(1) {
+  font-size: 14px!important;
   left: 0;
   text-align: center;
   padding: 2px 0px 0px 0px!important;
 }
-.simpleTheme #fpsmeter2 > div > div:nth-child(2) {
+rov-ui-simple-theme /deep/ #fpsmeter > div > div:nth-child(2) {
   display: none;
 }
-.simpleTheme #fpsmeter2 > div > div:nth-child(3) {
+rov-ui-simple-theme /deep/ #fpsmeter > div > div:nth-child(3) {
   margin-left:5px;
   width: 40px!important;
 }
-.simpleTheme #fpsmeter2 > div > div > div{
+rov-ui-simple-theme /deep/ #fpsmeter > div > div > div{
   background:rgba(255,255,255,0.4)!important;
   width: 2px!important;
   min-height: 0px;
 }
-.simpleTheme #fpsmeter2 > div > div > div:nth-child(20){left:0px!important;}
-.simpleTheme #fpsmeter2 > div > div > div:nth-child(19){left:2px!important;}
-.simpleTheme #fpsmeter2 > div > div > div:nth-child(18){left:4px!important;}
-.simpleTheme #fpsmeter2 > div > div > div:nth-child(17){left:6px!important;}
-.simpleTheme #fpsmeter2 > div > div > div:nth-child(16){left:8px!important;}
-.simpleTheme #fpsmeter2 > div > div > div:nth-child(15){left:10px!important;}
-.simpleTheme #fpsmeter2 > div > div > div:nth-child(14){left:12px!important;}
-.simpleTheme #fpsmeter2 > div > div > div:nth-child(13){left:14px!important;}
-.simpleTheme #fpsmeter2 > div > div > div:nth-child(12){left:16px!important;}
-.simpleTheme #fpsmeter2 > div > div > div:nth-child(11){left:18px!important;}
-.simpleTheme #fpsmeter2 > div > div > div:nth-child(10){left:20px!important;}
-.simpleTheme #fpsmeter2 > div > div > div:nth-child(9){left:22px!important;}
-.simpleTheme #fpsmeter2 > div > div > div:nth-child(8){left:24px!important;}
-.simpleTheme #fpsmeter2 > div > div > div:nth-child(7){left:26px!important;}
-.simpleTheme #fpsmeter2 > div > div > div:nth-child(6){left:28px!important;}
-.simpleTheme #fpsmeter2 > div > div > div:nth-child(5){left:30px!important;}
-.simpleTheme #fpsmeter2 > div > div > div:nth-child(4){left:32px!important;}
-.simpleTheme #fpsmeter2 > div > div > div:nth-child(3){left:34px!important;}
-.simpleTheme #fpsmeter2 > div > div > div:nth-child(2){left:36px!important;}
-.simpleTheme #fpsmeter2 > div > div > div:nth-child(1){left:38px!important;}
-.simpleTheme .alert,.simpleTheme .alert *{
+rov-ui-simple-theme /deep/ #fpsmeter > div > div > div:nth-child(20){left:0px!important;}
+rov-ui-simple-theme /deep/ #fpsmeter > div > div > div:nth-child(19){left:2px!important;}
+rov-ui-simple-theme /deep/ #fpsmeter > div > div > div:nth-child(18){left:4px!important;}
+rov-ui-simple-theme /deep/ #fpsmeter > div > div > div:nth-child(17){left:6px!important;}
+rov-ui-simple-theme /deep/ #fpsmeter > div > div > div:nth-child(16){left:8px!important;}
+rov-ui-simple-theme /deep/ #fpsmeter > div > div > div:nth-child(15){left:10px!important;}
+rov-ui-simple-theme /deep/ #fpsmeter > div > div > div:nth-child(14){left:12px!important;}
+rov-ui-simple-theme /deep/ #fpsmeter > div > div > div:nth-child(13){left:14px!important;}
+rov-ui-simple-theme /deep/ #fpsmeter > div > div > div:nth-child(12){left:16px!important;}
+rov-ui-simple-theme /deep/ #fpsmeter > div > div > div:nth-child(11){left:18px!important;}
+rov-ui-simple-theme /deep/ #fpsmeter > div > div > div:nth-child(10){left:20px!important;}
+rov-ui-simple-theme /deep/ #fpsmeter > div > div > div:nth-child(9){left:22px!important;}
+rov-ui-simple-theme /deep/ #fpsmeter > div > div > div:nth-child(8){left:24px!important;}
+rov-ui-simple-theme /deep/ #fpsmeter > div > div > div:nth-child(7){left:26px!important;}
+rov-ui-simple-theme /deep/ #fpsmeter > div > div > div:nth-child(6){left:28px!important;}
+rov-ui-simple-theme /deep/ #fpsmeter > div > div > div:nth-child(5){left:30px!important;}
+rov-ui-simple-theme /deep/ #fpsmeter > div > div > div:nth-child(4){left:32px!important;}
+rov-ui-simple-theme /deep/ #fpsmeter > div > div > div:nth-child(3){left:34px!important;}
+rov-ui-simple-theme /deep/ #fpsmeter > div > div > div:nth-child(2){left:36px!important;}
+rov-ui-simple-theme /deep/ #fpsmeter > div > div > div:nth-child(1){left:38px!important;}
+rov-ui-simple-theme /deep/ .alert,rov-ui-simple-theme /deep/ .alert *{
   text-shadow:none!important;
 }
 
-.simpleTheme .back-button {
+rov-ui-simple-theme /deep/ .back-button {
   position: relative;
   width: 35px;
   height: 35px;
@@ -444,10 +468,10 @@
   z-index: 10;
 }
 
-.simpleTheme .back-button:hover {
+rov-ui-simple-theme /deep/ .back-button:hover {
   background-image:  url('../img/back_dark.png')
 }
-.simpleTheme .drop-in-right h2,.simpleTheme .drop-in-right h3{
+rov-ui-simple-theme /deep/ .drop-in-right h2,rov-ui-simple-theme /deep/ .drop-in-right h3{
   font-weight: 200;
   position: relative;
   top: 16px;
@@ -455,7 +479,7 @@
   color:#606060;
 } 
 
-.simpleTheme .drop-in-right {
+rov-ui-simple-theme /deep/ .drop-in-right {
   position: fixed;
   top: 0px;
   bottom: 0px;
@@ -468,81 +492,85 @@
   overflow-x: hidden; 
   height: 100%;
 }
-.simpleTheme .drop-in-right,.simpleTheme .drop-in-right h1,.simpleTheme .drop-in-right h2,.simpleTheme .drop-in-right h3,.simpleTheme .drop-in-right h4,.simpleTheme .drop-in-right h5,.simpleTheme .drop-in-right h6{
+rov-ui-simple-theme /deep/ .drop-in-right,rov-ui-simple-theme /deep/ .drop-in-right h1,rov-ui-simple-theme /deep/ .drop-in-right h2,rov-ui-simple-theme /deep/ .drop-in-right h3,rov-ui-simple-theme /deep/ .drop-in-right h4,rov-ui-simple-theme /deep/ .drop-in-right h5,rov-ui-simple-theme /deep/ .drop-in-right h6{
   color:#606060;
 } 
 
-.simpleTheme .drop-in-right .accordion{
+rov-ui-simple-theme /deep/ .drop-in-right .accordion{
   position: absolute;
   top:70px;
 }
-.simpleTheme .settings-block {
+rov-ui-simple-theme /deep/ #calibrations > a{
+  float:none!important;
+}
+rov-ui-simple-theme /deep/ .settings-block {
   clear: left;
   margin-bottom: 30px;
   padding: 40px 20px 20px;
   height: auto!important;
+  width: 445px;
 }
-.simpleTheme .settings-block .thumbnails{
+rov-ui-simple-theme /deep/ .settings-block .thumbnails{
   margin: 0px!important;
 }
-.simpleTheme .accordion-heading .accordion-toggle{
+rov-ui-simple-theme /deep/ .accordion-heading .accordion-toggle{
   padding:10px 20px;
 }
-.simpleTheme .accordion-group{
+rov-ui-simple-theme /deep/ .accordion-group{
   border-radius:0px;
   border:none;
   border-bottom:1px solid #eee;
   margin:0px;
 }
-.simpleTheme .accordion-inner{
+rov-ui-simple-theme /deep/ .accordion-inner{
   border:none;
   padding: 10px 15px 20px 40px;
 }
-.simpleTheme .accordion-inner ul{
+rov-ui-simple-theme /deep/ .accordion-inner ul{
   padding:0;
   margin:0;
   list-style: none;
 }
-.simpleTheme .accordion-inner ul li{
+rov-ui-simple-theme /deep/ .accordion-inner ul li{
   height: 40px;
 }
 
-.simpleTheme #collapsePluginManager .accordion-inner ul li > div{
+rov-ui-simple-theme /deep/ #collapsePluginManager .accordion-inner ul li > div{
   text-align: right;
 }
-.simpleTheme #collapsePluginManager .accordion-inner ul li > div > span{
+rov-ui-simple-theme /deep/ #collapsePluginManager .accordion-inner ul li > div > span{
   float:left;
 }
-.simpleTheme .accordion-inner button{
+rov-ui-simple-theme /deep/ .accordion-inner button{
   position: relative;
   right: 0;
 }
-.simpleTheme .accordion-heading .accordion-toggle{
+rov-ui-simple-theme /deep/ .accordion-heading .accordion-toggle{
   color:#333;
   font-weight: 200;
 }
-.simpleTheme .accordion-heading .accordion-toggle:hover{
+rov-ui-simple-theme /deep/ .accordion-heading .accordion-toggle:hover{
   text-decoration: none;
     background-color: #f0f0f0;
 }
-.simpleTheme .btn,.simpleTheme .btn-primary,.simpleTheme button{padding:3px 15px;border-radius: 0px!important;border:none!important;text-shadow:none!important;box-shadow:none!important;background:#525252!important;color:#fff;}
-.simpleTheme .btn:hover,.simpleTheme button:hover{background-color: #333!important;color:#fff;border-color:#333;}
-.simpleTheme .btn.disabled,.simpleTheme .btn[disabled]{background-color:#909090!important;border-color:#909090;color:#fff;}
-.simpleTheme input[type="radio"],.simpleTheme  input[type="checkbox"]{
+rov-ui-simple-theme /deep/ .btn,rov-ui-simple-theme /deep/ .btn-primary,rov-ui-simple-theme /deep/ button{padding:3px 15px;border-radius: 0px!important;border:none!important;text-shadow:none!important;box-shadow:none!important;background:#525252!important;color:#fff;margin-bottom:5px;vertical-align: top;}
+rov-ui-simple-theme /deep/ .btn:hover,rov-ui-simple-theme /deep/ button:hover{background-color: #333!important;color:#fff;border-color:#333;}
+rov-ui-simple-theme /deep/ .btn.disabled,rov-ui-simple-theme /deep/ .btn[disabled]{background-color:#909090!important;border-color:#909090;color:#fff;}
+rov-ui-simple-theme /deep/ input[type="radio"],rov-ui-simple-theme /deep/  input[type="checkbox"]{
   margin-right:5px;
   vertical-align: top;
 }
-.simpleTheme .ui-effects-wrapper{
+rov-ui-simple-theme /deep/ .ui-effects-wrapper{
   height: 100%!important;
   overflow: visible!important;
 }
-.simpleTheme .ui-slider-horizontal{
+rov-ui-simple-theme /deep/ .ui-slider-horizontal{
   height: 10px;
   background:#ddd!important;
   border-color:#ddd!important;
   border-radius: 90px!important;
 }
-.simpleTheme .ui-slider .ui-slider-handle{
+rov-ui-simple-theme /deep/ .ui-slider .ui-slider-handle{
   height: 20px!important;
   width: 20px!important;
   background:#525252!important;
@@ -550,14 +578,14 @@
   border-radius: 90px!important;
   cursor: pointer!important;
 }
-.simpleTheme .ui-slider-horizontal .ui-slider-handle{
+rov-ui-simple-theme /deep/ .ui-slider-horizontal .ui-slider-handle{
   top:-6px!important;
   margin-left: -6px!important;
 }
 #telemetry-graph{
   display: none;
 }
-.simpleTheme #telemetry-graph{
+rov-ui-simple-theme /deep/ #telemetry-graph{
   position: absolute;
   top: 40px;
   bottom: 0px;
@@ -568,13 +596,13 @@
 }
 
 
-.simpleTheme #telemetry-graph > div{
+rov-ui-simple-theme /deep/ #telemetry-graph > div{
   display: inline-block;
   margin:5px;
   position: relative;
 
 }
-.simpleTheme #telemetry-graph h1{
+rov-ui-simple-theme /deep/ #telemetry-graph h1{
   font-weight: 100;
   font-size: 10px;
   margin: 0px;
@@ -582,12 +610,12 @@
   line-height: 10px;
   font-style: italic;
 }
-.simpleTheme #telemetry-graph .line {
+rov-ui-simple-theme /deep/ #telemetry-graph .line {
     fill: none;
     stroke: rgb(255, 176, 31);;
     stroke-width:1px;
 }
-.simpleTheme #telemetry-graph .status {
+rov-ui-simple-theme /deep/ #telemetry-graph .status {
     position: absolute;
     left:0;
     top:0;
